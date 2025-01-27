@@ -25,12 +25,11 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.useGravity = true;
     }
 
-    // Modified to accept a direction parameter
     public void Throw(UnityEngine.Vector3 throwDirection, float throwForce)
     {
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
-        objectGrabPointTransform = null; // Ensure the object is fully released
+        objectGrabPointTransform = null;
     }
 
     private void FixedUpdate()
