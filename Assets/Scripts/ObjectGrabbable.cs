@@ -7,6 +7,7 @@ public class ObjectGrabbable : MonoBehaviour
 {
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
+    private bool isRotationLocked = true;
 
     private void Awake()
     {
@@ -17,12 +18,14 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidBody.useGravity = false;
+        ToggleRotationLock(true);
     }
 
     public void Drop()
     {
         this.objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
+        objectRigidBody.freezeRotation = false;
     }
 
     public void Throw(UnityEngine.Vector3 throwDirection, float throwForce)
@@ -30,13 +33,19 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
         objectGrabPointTransform = null;
+        ToggleRotationLock(false);
+    }
+    public void ToggleRotationLock(bool isLocked)
+    {
+        isRotationLocked = isLocked;
+        objectRigidBody.freezeRotation = isLocked;
     }
 
     private void FixedUpdate()
     {
         if (objectGrabPointTransform != null)
         {
-            float lerpSpeed = 10f;
+            float lerpSpeed = 15f;
             UnityEngine.Vector3 newPosition = UnityEngine.Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             objectRigidBody.MovePosition(newPosition);
         }
