@@ -18,6 +18,8 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidBody.useGravity = false;
+        objectRigidBody.drag = 5f;
+        objectRigidBody.isKinematic = true;
         ToggleRotationLock(true);
     }
 
@@ -25,12 +27,16 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
+        objectRigidBody.drag = 0.5f;
+        objectRigidBody.isKinematic = false;
         objectRigidBody.freezeRotation = false;
     }
 
     public void Throw(UnityEngine.Vector3 throwDirection, float throwForce)
     {
+        objectRigidBody.drag = 0.5f;
         objectRigidBody.useGravity = true;
+        objectRigidBody.isKinematic = false;
         objectRigidBody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
         objectGrabPointTransform = null;
         ToggleRotationLock(false);

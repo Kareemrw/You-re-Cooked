@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerPickupDrop : MonoBehaviour
 {
+    [SerializeField] private GameObject grabUI;
+    [SerializeField] private GameObject dropUI;
+    [SerializeField] private GameObject throwUI;
+    [SerializeField] private GameObject RotateUI;
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
@@ -23,15 +27,18 @@ public class PlayerPickupDrop : MonoBehaviour
     private void Start()
     {
         throwPowerBar.gameObject.SetActive(false);
+        dropUI.gameObject.SetActive(false);
+        throwUI.gameObject.SetActive(false);
+        RotateUI.gameObject.SetActive(false);
     }
     void Update()
     {
-        HandlePickupDrop();
-        HandleThrowCharge();
-        HandleObjectRotation();
+        PickupDrop();
+        ThrowCharge();
+        ObjectRotation();
     }
 
-    private void HandlePickupDrop()
+    private void PickupDrop()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -53,12 +60,16 @@ public class PlayerPickupDrop : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out objectGrabbable))
             {
+                grabUI.gameObject.SetActive(false);
+                dropUI.gameObject.SetActive(true);
+                throwUI.gameObject.SetActive(true);
+                RotateUI.gameObject.SetActive(true);
                 objectGrabbable.Grab(objectGrabPointTransform);
             }
         }
     }
 
-     private void HandleObjectRotation()
+     private void ObjectRotation()
     {
         if (Input.GetMouseButtonDown(1) && objectGrabbable != null)
         {
@@ -103,6 +114,10 @@ public class PlayerPickupDrop : MonoBehaviour
         }
 
         objectGrabbable.Drop();
+        grabUI.gameObject.SetActive(true);
+        dropUI.gameObject.SetActive(false);
+        throwUI.gameObject.SetActive(false);
+        RotateUI.gameObject.SetActive(false);
         objectGrabbable = null;
     }
 
@@ -118,9 +133,13 @@ public class PlayerPickupDrop : MonoBehaviour
         float actualCharge = (chargeTimer % chargeTime) / chargeTime;
         float throwForce = Mathf.Lerp(5f, maxThrowForce, actualCharge);
         objectGrabbable.Throw(playerCameraTransform.forward, throwForce);
+        grabUI.gameObject.SetActive(true);
+        dropUI.gameObject.SetActive(false);
+        throwUI.gameObject.SetActive(false);
+        RotateUI.gameObject.SetActive(false);
         objectGrabbable = null;
     }
-    private void HandleThrowCharge()
+    private void ThrowCharge()
     {
         if (Input.GetMouseButtonDown(0) && objectGrabbable != null)
         {
