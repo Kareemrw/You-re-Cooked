@@ -60,6 +60,7 @@ public class PlayerPickupDrop : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out objectGrabbable))
             {
+                Debug.Log("Hit Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
                 grabUI.gameObject.SetActive(false);
                 dropUI.gameObject.SetActive(true);
                 throwUI.gameObject.SetActive(true);

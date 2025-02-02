@@ -8,6 +8,7 @@ public class ObjectGrabbable : MonoBehaviour
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
     private bool isRotationLocked = true;
+    
 
     private void Awake()
     {
