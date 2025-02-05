@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pot
   - Food
+  - Egg
+  - BoiledEgg
   layers:
   - Default
   - TransparentFX

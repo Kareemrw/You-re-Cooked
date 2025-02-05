@@ -9,7 +9,8 @@ public class Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Food") && currentSlot < foodSlots.Length)
+        ObjectGrabbable foodItem = other.GetComponent<ObjectGrabbable>();
+        if (other.CompareTag("Food") && !foodItem.isHeld && currentSlot < foodSlots.Length)
         {
             PlaceFoodOnPlate(other.transform);
         }

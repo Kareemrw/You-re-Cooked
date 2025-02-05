@@ -9,6 +9,8 @@ public class ObjectGrabbable : MonoBehaviour
     private Transform objectGrabPointTransform;
     private bool isRotationLocked = true;
     
+    public bool isHeld = true;
+    
 
     private void Awake()
     {
@@ -22,6 +24,8 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.drag = 5f;
         objectRigidBody.isKinematic = true;
         ToggleRotationLock(true);
+
+        isHeld = true;
     }
 
     public void Drop()
@@ -31,6 +35,8 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.drag = 0.5f;
         objectRigidBody.isKinematic = false;
         objectRigidBody.freezeRotation = false;
+
+        isHeld = false;
     }
 
     public void Throw(UnityEngine.Vector3 throwDirection, float throwForce)
@@ -41,6 +47,14 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
         objectGrabPointTransform = null;
         ToggleRotationLock(false);
+
+        EggCrack egg = GetComponent<EggCrack>();
+        if (egg != null)
+        {
+            egg.MarkAsThrown();
+        }
+
+        isHeld = false;
     }
     public void ToggleRotationLock(bool isLocked)
     {
