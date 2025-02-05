@@ -9,7 +9,7 @@ public class ObjectGrabbable : MonoBehaviour
     private Transform objectGrabPointTransform;
     private bool isRotationLocked = true;
     
-    public bool isHeld = true;
+    public bool isHeld = false;
     
 
     private void Awake()

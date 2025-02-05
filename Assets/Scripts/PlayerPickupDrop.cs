@@ -18,6 +18,7 @@ public class PlayerPickupDrop : MonoBehaviour
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private MouseLook mouseLook;
     [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] public float pickupDistance = 5f;
 
     private ObjectGrabbable objectGrabbable;
     private bool isChargingThrow = false;
@@ -55,7 +56,6 @@ public class PlayerPickupDrop : MonoBehaviour
 
     private void TryPickup()
     {
-        float pickupDistance = 2f;
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, pickupDistance, pickupLayerMask))
         {
             if (hit.transform.TryGetComponent(out objectGrabbable))
