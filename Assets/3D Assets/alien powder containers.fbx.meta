@@ -1,9 +1,49 @@
 fileFormatVersion: 2
-guid: c353d0b6de25fa148b3a291a587bce38
+guid: a1996a029798e8c4bad72bea1b21f10c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: container details
+    second: {fileID: 2100000, guid: b8d5995111e4c7a4aae901204c314f00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: container white
+    second: {fileID: 2100000, guid: dcddf8d9e1ad3874fa1897eec477c21b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cornstach screen
+    second: {fileID: 2100000, guid: 3c36f4eccdbf237469feeee1acaeac5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flour screen
+    second: {fileID: 2100000, guid: 2869a581b8e41e94b9e0ac6f51f5b0c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soil_flour
+    second: {fileID: 2100000, guid: 32ea1a0d53098ad47a59a316c89aba67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: starch
+    second: {fileID: 2100000, guid: cd89f81d7e531c741ad207e8fd1f7b72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teff
+    second: {fileID: 2100000, guid: 47efb64e6b599e945ac9ecd8d0a38597, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teff screen
+    second: {fileID: 2100000, guid: d11358503bd5c4c4b9dc9f53cf7c1e1d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
