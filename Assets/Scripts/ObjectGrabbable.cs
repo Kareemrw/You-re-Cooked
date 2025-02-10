@@ -7,14 +7,14 @@ public class ObjectGrabbable : MonoBehaviour
 {
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
-    private bool isRotationLocked = true;
-    
     public bool isHeld = false;
-    
+
+
 
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
+
     }
 
     public void Grab(Transform objectGrabPointTransform)
@@ -22,9 +22,8 @@ public class ObjectGrabbable : MonoBehaviour
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidBody.useGravity = false;
         objectRigidBody.drag = 5f;
-        objectRigidBody.isKinematic = true;
-        ToggleRotationLock(true);
 
+        ToggleRotationLock(true);
         isHeld = true;
     }
 
@@ -33,9 +32,8 @@ public class ObjectGrabbable : MonoBehaviour
         this.objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
         objectRigidBody.drag = 0.5f;
-        objectRigidBody.isKinematic = false;
-        objectRigidBody.freezeRotation = false;
 
+        ToggleRotationLock(false); 
         isHeld = false;
     }
 
@@ -43,7 +41,6 @@ public class ObjectGrabbable : MonoBehaviour
     {
         objectRigidBody.drag = 0.5f;
         objectRigidBody.useGravity = true;
-        objectRigidBody.isKinematic = false;
         objectRigidBody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
         objectGrabPointTransform = null;
         ToggleRotationLock(false);
@@ -56,9 +53,9 @@ public class ObjectGrabbable : MonoBehaviour
 
         isHeld = false;
     }
+
     public void ToggleRotationLock(bool isLocked)
     {
-        isRotationLocked = isLocked;
         objectRigidBody.freezeRotation = isLocked;
     }
 
@@ -67,8 +64,9 @@ public class ObjectGrabbable : MonoBehaviour
         if (objectGrabPointTransform != null)
         {
             float lerpSpeed = 15f;
-            UnityEngine.Vector3 newPosition = UnityEngine.Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-            objectRigidBody.MovePosition(newPosition);
+            UnityEngine.Vector3 targetPosition = UnityEngine.Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.fixedDeltaTime * lerpSpeed);
+            UnityEngine.Vector3 moveDirection = targetPosition - objectRigidBody.position;
+            objectRigidBody.velocity = moveDirection / Time.fixedDeltaTime;
         }
     }
 }
