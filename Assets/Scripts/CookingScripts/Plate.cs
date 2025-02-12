@@ -9,8 +9,7 @@ public class Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ObjectGrabbable foodItem = other.GetComponent<ObjectGrabbable>();
-        if (other.CompareTag("Food") && !foodItem.isHeld && currentSlot < foodSlots.Length)
+        if (other.CompareTag("Food") && currentSlot < foodSlots.Length)
         {
             PlaceFoodOnPlate(other.transform);
         }
@@ -18,25 +17,21 @@ public class Plate : MonoBehaviour
 
     private void PlaceFoodOnPlate(Transform food)
     {
-        // Snap food to the next available slot
         food.position = foodSlots[currentSlot].position;
         food.rotation = foodSlots[currentSlot].rotation;
-
         Collider foodCollider = food.GetComponent<Collider>();
         if (foodCollider != null)
         {
             foodCollider.enabled = false;
         }
-
-        // Disable physics on the food
         Rigidbody foodRigidbody = food.GetComponent<Rigidbody>();
         if (foodRigidbody != null)
         {
-            foodRigidbody.isKinematic = true;
+            Destroy(foodRigidbody); 
         }
-
         food.SetParent(foodSlots[currentSlot]);
 
         currentSlot++;
     }
+
 }

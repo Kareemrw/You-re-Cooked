@@ -8,6 +8,11 @@ TagManager:
   - Food
   - Egg
   - BoiledEgg
+  - Seaweed
+  - Rice
+  - Salmon
+  - CreamCheese
+  - Avocado
   layers:
   - Default
   - TransparentFX
