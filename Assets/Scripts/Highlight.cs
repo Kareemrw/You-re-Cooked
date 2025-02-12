@@ -17,6 +17,10 @@ public class Highlight : MonoBehaviour
         {
             outline = gameObject.AddComponent<Outline>();
         }
+        if (playerCameraTransform == null)
+        {
+            playerCameraTransform = GameObject.Find("Main Camera")?.transform;
+        }
 
         outline.enabled = false; 
     }

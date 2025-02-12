@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 893840507063256250}
   - component: {fileID: -7573183588860093175}
   - component: {fileID: 2950850157356681106}
+  - component: {fileID: -213844688426329613}
+  - component: {fileID: -5673404393994039410}
+  - component: {fileID: 6232501665194413942}
   m_Layer: 0
   m_Name: Sushi
   m_TagString: Untagged
@@ -149,3 +152,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
+--- !u!114 &-213844688426329613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243367677067647087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e746ed24ab3854fbcaaf2db5b8cb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wholeIngredient: {fileID: 6243367677067647087}
+  choppedPrefab: {fileID: 6243367677067647087, guid: 5c746a471b01cee4eb197be8b71b5241, type: 3}
+  chopForceThreshold: 5
+  numberOfPieces: 4
+  pieceSpacing: {x: 0.1, y: 0, z: 0.1}
+--- !u!114 &-5673404393994039410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243367677067647087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 779706047801435931, guid: 961d7e3c2ea160c4eb2d3d2d2014f77b, type: 3}
+  playerCameraTransform: {fileID: 0}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &6232501665194413942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243367677067647087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

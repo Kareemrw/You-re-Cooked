@@ -7,8 +7,6 @@ public class EggCrack: MonoBehaviour
     [SerializeField] private GameObject crackedEggPrefab; 
     [SerializeField] private float crackForceThreshold = 5f;
     private bool wasThrown = false;
-
-    // Call this when the egg is thrown
     public void MarkAsThrown()
     {
         wasThrown = true;

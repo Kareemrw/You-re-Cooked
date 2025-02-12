@@ -8,7 +8,7 @@ public class BoilingPot : MonoBehaviour
     [SerializeField] private GameObject boiledEggPrefab;
     [SerializeField] private GameObject steam;
 
-    private bool isBoiling = false;
+    public bool isBoiling = false;
     private float timer = 0f;
     private GameObject eggToBoil;
     private HashSet<GameObject> eggsInside = new HashSet<GameObject>();
