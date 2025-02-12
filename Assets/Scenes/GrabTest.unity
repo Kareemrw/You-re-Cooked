@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 49307513}
   - component: {fileID: 49307512}
   - component: {fileID: 49307511}
+  - component: {fileID: 49307519}
+  - component: {fileID: 49307518}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Rice
@@ -291,6 +293,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49307518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49307510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &49307519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49307510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 963194228}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &63574270
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +359,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1240870135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &72185358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8751812194228977193, guid: 961d7e3c2ea160c4eb2d3d2d2014f77b, type: 3}
+  m_PrefabInstance: {fileID: 1095264043676738074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &86829204
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +508,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7944651021092458706, guid: 768c803db1e32af47809091627a63503, type: 3}
+      propertyPath: playerCameraTransform
+      value: 
+      objectReference: {fileID: 963194228}
     - target: {fileID: 3335792359894869708, guid: 768c803db1e32af47809091627a63503, type: 3}
       propertyPath: m_Name
       value: Seaweed
@@ -534,6 +580,8 @@ GameObject:
   - component: {fileID: 258862496}
   - component: {fileID: 258862495}
   - component: {fileID: 258862494}
+  - component: {fileID: 258862502}
+  - component: {fileID: 258862501}
   m_Layer: 0
   m_Name: Avocado
   m_TagString: Avocado
@@ -688,6 +736,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &258862501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258862493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 72185358}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &258862502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258862493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &362013975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +2987,8 @@ GameObject:
   - component: {fileID: 1063206958}
   - component: {fileID: 1063206957}
   - component: {fileID: 1063206956}
+  - component: {fileID: 1063206963}
+  - component: {fileID: 1063206962}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Knife
@@ -3040,6 +3125,41 @@ Transform:
   - {fileID: 1050455001}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -88.396}
+--- !u!114 &1063206962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063206955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 963194228}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &1063206963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063206955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1066362539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,6 +3534,8 @@ GameObject:
   - component: {fileID: 1175285416}
   - component: {fileID: 1175285415}
   - component: {fileID: 1175285414}
+  - component: {fileID: 1175285422}
+  - component: {fileID: 1175285421}
   m_Layer: 0
   m_Name: CreamCheese
   m_TagString: CreamCheese
@@ -3568,6 +3690,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175285421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175285413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1175285422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175285413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 963194228}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1001 &1232045075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3727,6 +3884,8 @@ GameObject:
   - component: {fileID: 1240870129}
   - component: {fileID: 1240870136}
   - component: {fileID: 1240870137}
+  - component: {fileID: 1240870139}
+  - component: {fileID: 1240870138}
   m_Layer: 0
   m_Name: BambooRoller
   m_TagString: Untagged
@@ -3912,6 +4071,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.07, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1240870138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240870128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1240870139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240870128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 963194228}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1265020281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4680,6 +4874,8 @@ GameObject:
   - component: {fileID: 1987759083}
   - component: {fileID: 1987759082}
   - component: {fileID: 1987759089}
+  - component: {fileID: 1987759091}
+  - component: {fileID: 1987759090}
   m_Layer: 0
   m_Name: Salmon
   m_TagString: Untagged
@@ -4851,6 +5047,41 @@ MonoBehaviour:
   chopForceThreshold: 1
   numberOfPieces: 4
   pieceSpacing: {x: 0.7, y: 0, z: 0.5}
+--- !u!114 &1987759090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987759081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fe93991dd4c249a1ca4b32a33b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPickupDrop: {fileID: 816693131}
+  playerCameraTransform: {fileID: 963194228}
+  grabLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &1987759091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987759081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2015586684
 GameObject:
   m_ObjectHideFlags: 0
