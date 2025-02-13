@@ -3,7 +3,22 @@ guid: 376ba40e3cbfedc4d8d5cb159186212f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tong head inner
+    second: {fileID: 2100000, guid: 27d5761164c779f4a9794e5df3de0da0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tong head out
+    second: {fileID: 2100000, guid: 263e767585770f94487987c522fb3742, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tong shaft
+    second: {fileID: 2100000, guid: e7d381a73a95a9042bf32779d2c9f784, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
