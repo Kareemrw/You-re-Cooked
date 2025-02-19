@@ -8,39 +8,45 @@ public class KnifeChop : MonoBehaviour
     [SerializeField] private GameObject choppedPrefab; 
     [SerializeField] private float chopForceThreshold = 5f; 
     [SerializeField] private int numberOfPieces = 4;
-    [SerializeField] private Vector3 pieceSpacing = new Vector3(0.1f, 0, 0.1f); 
 
-    private bool isChopped = false;
+
+    public bool isChopped = false;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isChopped && collision.gameObject.CompareTag("Knife"))
+        if (collision.gameObject.CompareTag("Knife"))
         {
-            if (collision.relativeVelocity.magnitude > chopForceThreshold)
+            ObjectGrabbable knifeGrabbable = collision.gameObject.GetComponent<ObjectGrabbable>();
+            if (knifeGrabbable != null && knifeGrabbable.isHeld && !isChopped)
             {
-                ChopIngredient();
+                if (collision.relativeVelocity.magnitude > chopForceThreshold)
+                {
+                    ChopIngredient();
+                }
             }
         }
     }
 
-    private void ChopIngredient()
+ private void ChopIngredient()
     {
         isChopped = true;
 
         Vector3 ingredientPosition = wholeIngredient.transform.position;
         Quaternion ingredientRotation = wholeIngredient.transform.rotation;
+        
+        Renderer ingredientRenderer = wholeIngredient.GetComponent<Renderer>();
+        if (ingredientRenderer == null) return; 
+        float ingredientDepth = ingredientRenderer.bounds.size.z; 
+        float sliceSpacing = ingredientDepth / (numberOfPieces + 1) * 1.1f;
 
-        // Destroy the whole ingredient
         Destroy(wholeIngredient);
 
         for (int i = 0; i < numberOfPieces; i++)
         {
-            Vector3 piecePosition = ingredientPosition + new Vector3(
-                i % 2 * pieceSpacing.x, 0, i / 2 * pieceSpacing.z 
-            );
+            float offsetZ = (-ingredientDepth / 2) + (i + 1) * sliceSpacing; 
+            Vector3 piecePosition = ingredientPosition + new Vector3(0, 0, offsetZ);
+            
             Instantiate(choppedPrefab, piecePosition, ingredientRotation);
         }
-
-        Debug.Log($"🔪 {wholeIngredient.name} chopped into {numberOfPieces} pieces!");
     }
 }

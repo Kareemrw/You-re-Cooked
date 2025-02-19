@@ -70,25 +70,16 @@ public class PlayerPickupDrop : MonoBehaviour
         }
     }
 
-     private void ObjectRotation()
+    private void ObjectRotation()
     {
-        if (Input.GetMouseButtonDown(1) && objectGrabbable != null)
+        if (Input.GetMouseButton(1) && objectGrabbable != null)
         {
-            isRotatingObject = !isRotatingObject;
-
-            if (isRotatingObject)
+            if (!isRotatingObject)
             {
                 mouseLook.enabled = false;
                 objectGrabbable.ToggleRotationLock(false);
+                isRotatingObject = true;
             }
-            else
-            {
-                mouseLook.enabled = true;
-                objectGrabbable.ToggleRotationLock(true);
-            }
-        }
-        if (isRotatingObject)
-        {
             float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
 
@@ -103,8 +94,13 @@ public class PlayerPickupDrop : MonoBehaviour
                 Space.World
             );
         }
+        else if (isRotatingObject)
+        {
+            mouseLook.enabled = true;
+            objectGrabbable.ToggleRotationLock(true);
+            isRotatingObject = false;
+        }
     }
-
     private void DropObject()
     {
         if (isRotatingObject)

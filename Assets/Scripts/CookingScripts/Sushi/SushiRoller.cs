@@ -36,14 +36,24 @@ public class SushiRoller : MonoBehaviour
             }
             else if (currentStep == 2 && other.CompareTag("Salmon"))
             {
-                for (int slotIndex = 0; slotIndex <= 5; slotIndex++)
+                if (other.GetComponent<ObjectGrabbable>().isHeld) return;
+                for (int slotIndex = 2; slotIndex <= 5; slotIndex++)
                 {
                     if (!slotFilled[slotIndex])
                     {
+                        slotFilled[slotIndex] = true;
+                        
                         PlaceIngredient(other.transform, slotIndex);
                         salmonCounter++;
 
-                        if (salmonCounter >= 4) currentStep++;
+                        Debug.Log($"salmon in slot {slotIndex} total: {salmonCounter}/4");
+                        other.enabled = false;
+
+                        if (salmonCounter >= 4)
+                        {
+                            currentStep++;
+                            Debug.Log("all salmon placed.");
+                        }
                         break;
                     }
                 }

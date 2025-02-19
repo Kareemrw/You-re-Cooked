@@ -14,6 +14,8 @@ TagManager:
   - CreamCheese
   - Avocado
   - Knife
+  - WholeIngredient
+  - SushiRoll
   layers:
   - Default
   - TransparentFX

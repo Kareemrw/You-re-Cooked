@@ -11,15 +11,15 @@ GameObject:
   - component: {fileID: 7403520888368758701}
   - component: {fileID: 5736626902834424058}
   - component: {fileID: 2481931225140174520}
-  - component: {fileID: 893840507063256250}
   - component: {fileID: -7573183588860093175}
   - component: {fileID: 2950850157356681106}
   - component: {fileID: -213844688426329613}
   - component: {fileID: -5673404393994039410}
   - component: {fileID: 6232501665194413942}
+  - component: {fileID: -5685787447582099331}
   m_Layer: 0
   m_Name: Sushi
-  m_TagString: Untagged
+  m_TagString: SushiRoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,13 +32,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6243367677067647087}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.7889857, y: 1.1243271, z: 2.9246674}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 8.382721, y: 1.573, z: 10.042378}
   m_LocalScale: {x: 0.27937794, y: 0.38205785, z: 0.27937794}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5736626902834424058
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89,29 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &893840507063256250
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243367677067647087}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &-7573183588860093175
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,7 +145,7 @@ MonoBehaviour:
   choppedPrefab: {fileID: 6243367677067647087, guid: 5c746a471b01cee4eb197be8b71b5241, type: 3}
   chopForceThreshold: 5
   numberOfPieces: 4
-  pieceSpacing: {x: 0.1, y: 0, z: 0.1}
+  isChopped: 0
 --- !u!114 &-5673404393994039410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +181,24 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &-5685787447582099331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243367677067647087}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2.0000005, z: 1.0000005}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
