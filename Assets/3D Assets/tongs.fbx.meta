@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: tong
+    second: {fileID: 2100000, guid: fca3c7b301244274db5844a0eb7154bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: tong head inner
     second: {fileID: 2100000, guid: 27d5761164c779f4a9794e5df3de0da0, type: 2}
   - first:
