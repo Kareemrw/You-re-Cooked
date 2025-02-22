@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: e40a9401cc1bed644a515f20850dc855
+guid: 6e20d467489df104d8bd8fcbe9a83243
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: plate
-    second: {fileID: 2100000, guid: 133791ca5255ced46808b52c72a0e9eb, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
