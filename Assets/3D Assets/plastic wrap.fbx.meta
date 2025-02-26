@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86cdc4b78825ed74eb3ad12d2a09bbed
+guid: 027a392f11677064ca33007839e117f2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: onion_
-    second: {fileID: 2100000, guid: 2e7c6708a1ded35488b069e358e0a26d, type: 2}
+      name: plastic
+    second: {fileID: 2100000, guid: d07fe4e812a48f649b62af877cbf5a49, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

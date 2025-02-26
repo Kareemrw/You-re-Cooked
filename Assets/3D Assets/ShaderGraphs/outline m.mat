@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _edge: 0.0006
-    - _thickness: 0.001
+    - _thickness: 0.004
     m_Colors:
     - _outline_color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
