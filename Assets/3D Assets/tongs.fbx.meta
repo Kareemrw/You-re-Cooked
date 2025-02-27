@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27f33f619ac248e47945512412401e7d
+guid: 760bc1ecba6020c4a83880181fd90729
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tong
-    second: {fileID: 2100000, guid: e7d381a73a95a9042bf32779d2c9f784, type: 2}
+    second: {fileID: 2100000, guid: f0934252a09809348b6489215f58e4a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tong head inner
-    second: {fileID: 2100000, guid: 27d5761164c779f4a9794e5df3de0da0, type: 2}
+    second: {fileID: 2100000, guid: 98c8aa9dbb9cc364d81b3c383574a4d9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tong head out
-    second: {fileID: 2100000, guid: 263e767585770f94487987c522fb3742, type: 2}
+    second: {fileID: 2100000, guid: cfc3b56c5d6e110409ce4bacf446d9d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tong shaft
-    second: {fileID: 2100000, guid: e7d381a73a95a9042bf32779d2c9f784, type: 2}
+    second: {fileID: 2100000, guid: 1c8f29a8f552b1c4b86eede79fb18bbc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,66 +51,8 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: tong head|tong headAction.001
-      takeName: tong head|tong headAction.001
-      internalID: 3431864934685040240
-      firstFrame: 0
-      lastFrame: 7
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: tong head.001|tong head.001Action.001
-      takeName: tong head.001|tong head.001Action.001
-      internalID: -8456606363779672569
-      firstFrame: 0
-      lastFrame: 7
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    isReadable: 1
+    clipAnimations: []
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
