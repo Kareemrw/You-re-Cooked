@@ -11,6 +11,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSensitivity = SettingsManager.Instance.mouseSensitivity; // load sensitivity from settings
     }
     void Update()
     {
