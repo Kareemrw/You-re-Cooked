@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: cap
     second: {fileID: 2100000, guid: 94d5183c6e679ec418debd4f62bb7adb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: olive oil
+    second: {fileID: 2100000, guid: 899cc5f9c4f2cff43b723821d9f8cdbc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
