@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: -6478536213147159724, guid: 859461eb118cee449a414818e25aed85, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: bottle
     second: {fileID: 2100000, guid: 9fbfb11d241982049a6104eade052369, type: 2}
   - first:
@@ -14,6 +19,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: cap
     second: {fileID: 2100000, guid: 94d5183c6e679ec418debd4f62bb7adb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquid
+    second: {fileID: 2100000, guid: 7efd105bb9b988c419e21f718dbf8472, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

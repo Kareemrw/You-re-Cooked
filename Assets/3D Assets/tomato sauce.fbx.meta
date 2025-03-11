@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: cap
     second: {fileID: 2100000, guid: 94d5183c6e679ec418debd4f62bb7adb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tomato
+    second: {fileID: 2100000, guid: 81a427efd0ce7db4aa691950a3f80d61, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
