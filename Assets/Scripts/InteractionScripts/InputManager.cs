@@ -77,7 +77,7 @@ public class InputManager : MonoBehaviour
     {
         return moveDirection;
 
-        print("move direction");
+        Debug.Log("move direction");
     }
 
     // for any of the below 'Get' methods, if we're getting it then we're also using it,
