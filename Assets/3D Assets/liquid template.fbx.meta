@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52bb18a6c8291ff409fe82d3a71f8a50
+guid: 9cafd5aea48124b4cabf87403524d84c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: binding
+    second: {fileID: 2100000, guid: b2d3e01e76751c340bdcc3ecacb7ecf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: bottle
-    second: {fileID: 2100000, guid: 9fbfb11d241982049a6104eade052369, type: 2}
+    second: {fileID: 2100000, guid: 37d3bafa984482f4b8c64fdf8035e51c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,8 +22,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: water
-    second: {fileID: 2100000, guid: 95e9f91df8e91fa40b3e5f04a2364934, type: 2}
+      name: lable border
+    second: {fileID: 2100000, guid: fa9f5f06775e03041835e8e6f8831ccc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soy sauce
+    second: {fileID: 2100000, guid: ab707fc7f3e430c48ba39bba98de983f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soy sauce label
+    second: {fileID: 2100000, guid: 48b4a8a787fe02548aff3744171e5d02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 859461eb118cee449a414818e25aed85
+guid: 19ddce7d37c31574cb892a8fe0c878df
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bottle
-    second: {fileID: 2100000, guid: 9fbfb11d241982049a6104eade052369, type: 2}
+      name: Material.006
+    second: {fileID: 2100000, guid: cf9b452a17dfb374181b3fed262fdb58, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: cap
-    second: {fileID: 2100000, guid: 94d5183c6e679ec418debd4f62bb7adb, type: 2}
+      name: Material.008
+    second: {fileID: 2100000, guid: 10b8062817bf5c0439b5d5b1c1cf421c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tomato
-    second: {fileID: 2100000, guid: 81a427efd0ce7db4aa691950a3f80d61, type: 2}
+      name: Material.009
+    second: {fileID: 2100000, guid: 30416c25fd0d9df4b9d9658fd67e8add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: ef014cd544db54b42aa790782ee7a539, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 9b1c99192bed9f04aaaf4c9b08eb2d41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: content
+    second: {fileID: 2100000, guid: 9868984e37864324ead4ca344df28b94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lid
+    second: {fileID: 2100000, guid: ad063b909e0ff594883c2583802834f8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
