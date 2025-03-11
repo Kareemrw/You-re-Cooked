@@ -12,7 +12,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-    private float moveDirection = 0;
+    private Vector2 moveDirection = Vector2.zero;
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
@@ -37,15 +37,15 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            moveDirection = context.ReadValue<float>();
+            moveDirection = context.ReadValue<Vector2>();
         }
         else if (context.canceled)
         {
-            moveDirection = context.ReadValue<float>();
+            moveDirection = context.ReadValue<Vector2>();
         }
     }
 
-    public void JumpPressed(InputAction.CallbackContext context)
+    /*public void JumpPressed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -55,7 +55,7 @@ public class InputManager : MonoBehaviour
         {
             jumpPressed = false;
         }
-    }
+    }*/
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
     {
@@ -81,7 +81,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public float GetMoveDirection()
+    public Vector2 GetMoveDirection()
     {
         return moveDirection;
     }
