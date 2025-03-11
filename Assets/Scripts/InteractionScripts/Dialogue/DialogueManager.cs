@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         instructionsPanel.SetActive(false);
-        backgroundArt.SetActive(true);
+        backgroundArt.SetActive(false);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
