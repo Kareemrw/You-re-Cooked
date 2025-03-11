@@ -12,7 +12,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-    private Vector2 moveDirection = Vector2.zero;
+    private bool moveDirection = false;
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
         return instance;
     }
 
-    public void MovePressed(InputAction.CallbackContext context)
+    /*public void MovePressed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -43,7 +43,7 @@ public class InputManager : MonoBehaviour
         {
             moveDirection = context.ReadValue<Vector2>();
         }
-    }
+    }*/
 
     /*public void JumpPressed(InputAction.CallbackContext context)
     {

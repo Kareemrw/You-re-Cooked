@@ -4,9 +4,11 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+   
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -25,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject instructionsPanel;
 
     public GameObject backgroundArt;
+
+
 
     private void Awake()
     {
@@ -111,6 +115,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();
             //display choices, if any, for this dialogue line
             DisplayChoices();
+
+            Debug.Log("cont story if statement");
         }
         else
         {
@@ -135,26 +141,28 @@ public class DialogueManager : MonoBehaviour
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
+            Debug.Log("foreach loop");
         }
         // go through the remaining choices the UI supports and make sure they are hidden
         for(int i = index; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
+            Debug.Log("for loop");
         }
 
-        StartCoroutine(SelectFirstChoice());
+       SelectFirstChoice();
     }
 
-    private IEnumerator SelectFirstChoice()
+    private void SelectFirstChoice()
     {
-        //Event system requiers we clear it first, then wait for at least one frame before we set the current selected object.
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        
+        Debug.Log("select first block");
     }
 
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+
+        Debug.Log("enters makeChoice block");
     }
 }
