@@ -5,6 +5,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,9 +25,9 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
-    public GameObject instructionsPanel;
+   // public GameObject instructionsPanel;
 
-    public GameObject backgroundArt;
+   // public GameObject backgroundArt;
 
 
 
@@ -37,6 +38,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the Scene");
         }
         instance = this;
+
+        //EnterDialogueMode();
     }
 
     public static DialogueManager GetInstance()
@@ -46,11 +49,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        //dialogueIsPlaying = false;
+        //dialoguePanel.SetActive(false);
 
-        instructionsPanel.SetActive(true);
-        backgroundArt.SetActive(false);
+        //instructionsPanel.SetActive(true);
+        //backgroundArt.SetActive(false);
 
         //get all of the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -83,8 +86,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
-        instructionsPanel.SetActive(false);
-        backgroundArt.SetActive(false);
+        //instructionsPanel.SetActive(false);
+        //backgroundArt.SetActive(false);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -100,11 +103,13 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
-        instructionsPanel.SetActive(true);
-        backgroundArt.SetActive(false);
+        //instructionsPanel.SetActive(true);
+        //backgroundArt.SetActive(false);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        Load3DScene();
     }
 
     private void ContinueStory()
@@ -165,5 +170,10 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
 
         Debug.Log("enters makeChoice block");
+    }
+
+    public void Load3DScene()
+    {
+        SceneManager.LoadScene("InteractionTesting");
     }
 }

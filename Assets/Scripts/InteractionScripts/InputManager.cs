@@ -12,12 +12,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-<<<<<<< HEAD
-    private float moveDirection = 0;
-=======
-    private Vector2 moveDirection;
+    private Vector2 moveDirection = Vector2.zero;
     private bool jumpPressed = false;
->>>>>>> 857326b604f9ae4e439d43fe54adf04a5fd31216
     private bool interactPressed = false;
     private bool submitPressed = false;
 
@@ -41,18 +37,25 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            moveDirection = context.ReadValue<float>();
-
-            print("move performed");
+            moveDirection = context.ReadValue<Vector2>();
         }
         else if (context.canceled)
         {
-            moveDirection = context.ReadValue<float>();
-
-            print("move canceled");
+            moveDirection = context.ReadValue<Vector2>();
         }
     }
 
+    public void JumpPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            jumpPressed = true;
+        }
+        else if (context.canceled)
+        {
+            jumpPressed = false;
+        }
+    }
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
     {
@@ -78,16 +81,21 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public float GetMoveDirection()
+    public Vector2 GetMoveDirection()
     {
         return moveDirection;
-
-        Debug.Log("move direction");
     }
 
     // for any of the below 'Get' methods, if we're getting it then we're also using it,
     // which means we should set it to false so that it can't be used again until actually
     // pressed again.
+
+    public bool GetJumpPressed()
+    {
+        bool result = jumpPressed;
+        jumpPressed = false;
+        return result;
+    }
 
     public bool GetInteractPressed()
     {
@@ -107,5 +115,4 @@ public class InputManager : MonoBehaviour
     {
         submitPressed = false;
     }
-
 }

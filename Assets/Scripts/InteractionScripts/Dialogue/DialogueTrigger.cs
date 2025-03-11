@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class DialogueTrigger : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+
+            Load2DScene();
         }
     }
 
@@ -48,5 +51,10 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+    public void Load2DScene()
+    {
+        SceneManager.LoadScene("DialogueScene");
     }
 }
