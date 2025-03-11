@@ -3481,10 +3481,6 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9cd3c6e6-c33a-4263-b755-4c5fb2689eea
-    m_ActionName: Game/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/rightArrow,/Keyboard/leftArrow]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 694788724}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
@@ -3520,6 +3516,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5fe0d5d2-d387-4a7a-8598-bcd97173e884
     m_ActionName: Game/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 694788724}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: MovePressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f964e382-1ce1-4d67-9f4d-f2df255906e7
+    m_ActionName: Game/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/rightArrow,/Keyboard/leftArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game

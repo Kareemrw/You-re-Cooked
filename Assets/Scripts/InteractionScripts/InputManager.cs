@@ -12,8 +12,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-    private bool moveDirection = false;
-    private bool jumpPressed = false;
+    private float moveDirection = 0;
     private bool interactPressed = false;
     private bool submitPressed = false;
 
@@ -33,29 +32,22 @@ public class InputManager : MonoBehaviour
         return instance;
     }
 
-    /*public void MovePressed(InputAction.CallbackContext context)
+    public void MovePressed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            moveDirection = context.ReadValue<Vector2>();
-        }
-        else if (context.canceled)
-        {
-            moveDirection = context.ReadValue<Vector2>();
-        }
-    }*/
+            moveDirection = context.ReadValue<float>();
 
-    /*public void JumpPressed(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            jumpPressed = true;
+            print("move performed");
         }
         else if (context.canceled)
         {
-            jumpPressed = false;
+            moveDirection = context.ReadValue<float>();
+
+            print("move canceled");
         }
-    }*/
+    }
+
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
     {
@@ -81,21 +73,16 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public Vector2 GetMoveDirection()
+    public float GetMoveDirection()
     {
         return moveDirection;
+
+        print("move direction");
     }
 
     // for any of the below 'Get' methods, if we're getting it then we're also using it,
     // which means we should set it to false so that it can't be used again until actually
     // pressed again.
-
-    public bool GetJumpPressed()
-    {
-        bool result = jumpPressed;
-        jumpPressed = false;
-        return result;
-    }
 
     public bool GetInteractPressed()
     {

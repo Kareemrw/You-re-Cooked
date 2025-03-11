@@ -141,6 +141,7 @@ public class DialogueManager : MonoBehaviour
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
+            
             Debug.Log("foreach loop");
         }
         // go through the remaining choices the UI supports and make sure they are hidden
