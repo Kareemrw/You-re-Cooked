@@ -3,19 +3,22 @@
 === main ===
 Which pokemon do you choose?
     + [Charmander]
-        -> chosen("Charmander")
+        -> choice2("Charmander")
     + [Bulbasaur]
-        -> chosen("Bulbasaur")
+        -> choice2("Bulbasaur")
     + [Squirtle]
-        -> chosen("Squirtle")
+        -> choice2("Squirtle")
         
 === chosen(pokemon) ===
+Congratulations! You chose {pokemon}!
+    ->END
+        
+=== choice2 (pokemon) ===
 You chose {pokemon}!
-Which pokemon do you choose?
-    + [Charmander]
-        -> chosen("Charmander")
-    + [Bulbasaur]
-        -> chosen("Bulbasaur")
-    + [Squirtle]
-        -> chosen("Squirtle")
+Do you like this pokemon?
+    +Yes
+    -> chosen(pokemon)
+    +No, I want to choose again
+    -> main
+
 -> END
