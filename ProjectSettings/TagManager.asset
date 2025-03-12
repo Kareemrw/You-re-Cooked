@@ -16,6 +16,7 @@ TagManager:
   - Knife
   - WholeIngredient
   - SushiRoll
+  - AlfinHead
   layers:
   - Default
   - TransparentFX

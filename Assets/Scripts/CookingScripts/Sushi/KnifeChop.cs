@@ -8,7 +8,9 @@ public class KnifeChop : MonoBehaviour
     [SerializeField] private GameObject choppedPrefab; 
     [SerializeField] private float chopForceThreshold = 5f; 
     [SerializeField] private int numberOfPieces = 4;
-
+    [SerializeField] private AudioClip chopSound;
+    [SerializeField] private float maxHearingDistance = 20f;
+    private Transform playerTransform;
 
     public bool isChopped = false;
 
@@ -29,6 +31,24 @@ public class KnifeChop : MonoBehaviour
 
  private void ChopIngredient()
     {
+         if (playerTransform != null)
+        {
+            // Calculate distance to player
+            float distance = Vector3.Distance(transform.position, playerTransform.position);
+            
+            // Calculate volume based on distance (linear falloff)
+            float volume = Mathf.Clamp01(1 - (distance / maxHearingDistance));
+            
+            // Add a minimum volume so it's never completely silent
+            volume = Mathf.Clamp(volume, 0.1f, 1f);
+            
+            SoundFXManager.instance.PlaySoundFXClip(chopSound, transform, volume);
+        }
+        else
+        {
+            // Fallback if player not found
+            SoundFXManager.instance.PlaySoundFXClip(chopSound, transform, 1f);
+        }
         isChopped = true;
 
         Vector3 ingredientPosition = wholeIngredient.transform.position;
