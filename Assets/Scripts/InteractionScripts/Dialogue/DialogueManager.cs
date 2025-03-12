@@ -18,6 +18,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    [Header("Ink JSON")]
+    [SerializeField] private TextAsset inkJSON;
+
 
     private Story currentStory;
 
@@ -39,7 +42,21 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
 
-        //EnterDialogueMode();
+
+
+        if(SceneManager.GetActiveScene().name == "DialogueScene")
+        {
+            //get all of the choices text
+            choicesText = new TextMeshProUGUI[choices.Length];
+            int index = 0;
+            foreach (GameObject choice in choices)
+            {
+                choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+                index++;
+            }
+
+            EnterDialogueMode(inkJSON);
+        }
     }
 
     public static DialogueManager GetInstance()
@@ -47,7 +64,7 @@ public class DialogueManager : MonoBehaviour
         return instance;
     }
 
-    private void Start()
+    /*private void Start()
     {
         //dialogueIsPlaying = false;
         //dialoguePanel.SetActive(false);
@@ -63,7 +80,7 @@ public class DialogueManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
-    }
+    }*/
 
     private void Update()
     {

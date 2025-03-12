@@ -28,6 +28,15 @@ public class InputManager : MonoBehaviour
         instance = this;
     }
 
+    void FixedUpdate()
+    {
+        if (moveDirection != Vector2.zero)
+        {
+            // Use the moveInput variable
+            transform.Translate(moveDirection.normalized * Time.fixedDeltaTime);
+        }
+    }
+
     public static InputManager GetInstance()
     {
         return instance;

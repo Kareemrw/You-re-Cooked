@@ -11,4 +11,11 @@ Which pokemon do you choose?
         
 === chosen(pokemon) ===
 You chose {pokemon}!
+Which pokemon do you choose?
+    + [Charmander]
+        -> chosen("Charmander")
+    + [Bulbasaur]
+        -> chosen("Bulbasaur")
+    + [Squirtle]
+        -> chosen("Squirtle")
 -> END
