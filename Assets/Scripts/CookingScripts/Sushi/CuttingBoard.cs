@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CuttingBoard : MonoBehaviour
 {
-    [Header("Settings")]
     [SerializeField] private Transform ingredientSlot;
     private GameObject currentIngredient;
 
@@ -17,7 +16,16 @@ public class CuttingBoard : MonoBehaviour
             {
                 PlaceIngredient(other.gameObject);
             }
-        }if (other.CompareTag("SushiRoll") && currentIngredient == null)
+        }
+        if (other.CompareTag("SushiRoll") && currentIngredient == null)
+        {
+            ObjectGrabbable grabbable = other.GetComponent<ObjectGrabbable>();
+            if (grabbable != null && !grabbable.isHeld)
+            {
+                PlaceIngredient(other.gameObject);
+            }
+        }
+        if (other.CompareTag("AlfinHead") && currentIngredient == null)
         {
             ObjectGrabbable grabbable = other.GetComponent<ObjectGrabbable>();
             if (grabbable != null && !grabbable.isHeld)
@@ -36,8 +44,14 @@ public class CuttingBoard : MonoBehaviour
         ingredient.transform.position = ingredientSlot.position + new Vector3(0, ingredientSize.y / 2, 0);
          if (ingredient.CompareTag("SushiRoll")) 
         {  
-            ingredient.transform.rotation = ingredientSlot.rotation * Quaternion.Euler(90, 0, 0); // Adjust rotation
-        }
+            ingredient.transform.rotation = ingredientSlot.rotation * Quaternion.Euler(90, 0, 0); 
+        } 
+        else if (ingredient.CompareTag("AlfinHead")) 
+        {
+            ingredient.transform.rotation = ingredientSlot.rotation * Quaternion.Euler(0, 90, 90); 
+            
+            ingredient.transform.position = ingredientSlot.position + new Vector3(0, 0.2f, 0);
+        }   
         else
         {
             ingredient.transform.position = ingredientSlot.position;

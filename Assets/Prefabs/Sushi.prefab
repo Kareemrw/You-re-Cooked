@@ -145,6 +145,7 @@ MonoBehaviour:
   choppedPrefab: {fileID: 6243367677067647087, guid: 5c746a471b01cee4eb197be8b71b5241, type: 3}
   chopForceThreshold: 5
   numberOfPieces: 4
+  chopSound: {fileID: 8300000, guid: 06dc88bf216134e4b8dd3b0045a4df8e, type: 3}
   isChopped: 0
 --- !u!114 &-5673404393994039410
 MonoBehaviour:

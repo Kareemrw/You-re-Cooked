@@ -1,29 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RecipeBook : MonoBehaviour
 {
-    [Header("UI Elements")]
     public GameObject recipeBookUI;
-    public GameObject[] pages; // Assign 3 pages in order (Page1, Page2, Page3)
-
+    public GameObject[] pages;
+    public PlayerMovement playerMovement; // Reference to player movement script
+    public MouseLook mouseLook;
     private int currentPage = 1;
     private bool bookOpen = false;
 
     private void Start()
     {
-        // Initialize all pages as inactive
         recipeBookUI.SetActive(false);
         foreach (GameObject page in pages)
         {
             page.SetActive(false);
         }
+        
+        // Lock cursor initially
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
-        // Toggle book visibility
         if (Input.GetKeyDown(KeyCode.R))
         {
             ToggleBook();
@@ -31,15 +31,7 @@ public class RecipeBook : MonoBehaviour
 
         if (bookOpen)
         {
-            // Page navigation
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                NextPage();
-            }
-            else if (Input.GetKeyDown(KeyCode.A))
-            {
-                PreviousPage();
-            }
+            HandlePageNavigation();
         }
     }
 
@@ -48,10 +40,33 @@ public class RecipeBook : MonoBehaviour
         bookOpen = !bookOpen;
         recipeBookUI.SetActive(bookOpen);
 
+        // Toggle player movement
+        if (playerMovement != null && mouseLook != null)
+        {
+            playerMovement.enabled = !bookOpen;
+            mouseLook.enabled = !bookOpen;
+        }
+        
+        // Handle cursor state
+        Cursor.lockState = bookOpen ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = bookOpen;
+
         if (bookOpen)
         {
             currentPage = 1;
             UpdatePages();
+        }
+    }
+
+    private void HandlePageNavigation()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            NextPage();
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            PreviousPage();
         }
     }
 
