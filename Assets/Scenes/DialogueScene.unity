@@ -228,6 +228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2139508293119230278, guid: d92b00a032bf23a41b35f92e97afa14e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37
+      objectReference: {fileID: 0}
     - target: {fileID: 3478864617844208945, guid: d92b00a032bf23a41b35f92e97afa14e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -261,7 +265,8 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8090091368458204360, guid: d92b00a032bf23a41b35f92e97afa14e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2139508293119230278, guid: d92b00a032bf23a41b35f92e97afa14e, type: 3}
       insertIndex: 0
@@ -605,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 2785410505083502562, guid: 51371d23e62da03418f3ca9d2c35ca0a, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 983120a56f91ed3499ba87d512892b11, type: 3}
+      objectReference: {fileID: 4900000, guid: f997012105fcdfb468ad6dd6d91c16e0, type: 3}
     - target: {fileID: 2785410505083502562, guid: 51371d23e62da03418f3ca9d2c35ca0a, type: 3}
       propertyPath: dialogueText
       value: 
@@ -856,7 +861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 68.999985}
+  m_AnchoredPosition: {x: 0, y: 43}
   m_SizeDelta: {x: -0.000061035156, y: 157.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106915300
