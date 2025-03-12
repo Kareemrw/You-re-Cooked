@@ -55,6 +55,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void Load2DScene()
     {
-        SceneManager.LoadScene("DialogueScene");
+        SceneManager.LoadScene("IntroductionDialogue");
     }
 }

@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-        if(SceneManager.GetActiveScene().name == "DialogueScene")
+        if(SceneManager.GetActiveScene().name == "IntroductionDialogue")
         {
             //get all of the choices text
             choicesText = new TextMeshProUGUI[choices.Length];

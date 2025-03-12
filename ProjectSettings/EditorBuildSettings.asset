@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Interaction.unity
     guid: a94eb8cad0a7c9742a57a227ab7528f8
   - enabled: 1
-    path: Assets/Scenes/DialogueScene.unity
+    path: Assets/Scenes/Dialogue Scenes/IntroductionDialogue.unity
     guid: f71489d6311dd5c4eae4a3514b228345
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ddc92190b3bffcc47976fcebe33dfb4d, type: 2}
