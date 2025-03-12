@@ -6,6 +6,7 @@ public class EggCrack: MonoBehaviour
 {
     [SerializeField] private GameObject crackedEggPrefab; 
     [SerializeField] private float crackForceThreshold = 5f;
+    [SerializeField] private AudioClip crackSound;
     private bool wasThrown = false;
     public void MarkAsThrown()
     {
@@ -22,6 +23,7 @@ public class EggCrack: MonoBehaviour
 
     private void CrackEgg()
     {
+        SoundFXManager.instance.PlaySoundFXClip(crackSound, transform, 1f);
         Instantiate(crackedEggPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }

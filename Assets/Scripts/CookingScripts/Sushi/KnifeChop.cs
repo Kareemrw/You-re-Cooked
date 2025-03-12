@@ -8,7 +8,7 @@ public class KnifeChop : MonoBehaviour
     [SerializeField] private GameObject choppedPrefab; 
     [SerializeField] private float chopForceThreshold = 5f; 
     [SerializeField] private int numberOfPieces = 4;
-
+    [SerializeField] private AudioClip chopSound;
 
     public bool isChopped = false;
 
@@ -29,6 +29,7 @@ public class KnifeChop : MonoBehaviour
 
  private void ChopIngredient()
     {
+        SoundFXManager.instance.PlaySoundFXClip(chopSound, transform, 1f);
         isChopped = true;
 
         Vector3 ingredientPosition = wholeIngredient.transform.position;
