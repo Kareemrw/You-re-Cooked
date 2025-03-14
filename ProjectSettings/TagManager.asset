@@ -30,6 +30,13 @@ TagManager:
   - Water
   - CookedRice
   - Paddle
+  - HeadSlice2
+  - HeadSlice1
+  - Plate
+  - UncookedSlice1
+  - UncookedSlice2
+  - AlfinHalf1
+  - AlfinHalf2
   layers:
   - Default
   - TransparentFX
