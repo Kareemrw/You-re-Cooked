@@ -19,6 +19,8 @@ public class PlayerPickupDrop : MonoBehaviour
     [SerializeField] private MouseLook mouseLook;
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] public float pickupDistance = 5f;
+    [SerializeField] private AudioClip[] throwSounds; // Array of throw sound clips
+    [SerializeField] [Range(0, 1)] private float volume = 0.8f;
 
     private ObjectGrabbable objectGrabbable;
     private bool isChargingThrow = false;
@@ -120,6 +122,11 @@ public class PlayerPickupDrop : MonoBehaviour
 
     private void ThrowObject()
     {
+        if(throwSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, throwSounds.Length);
+            SoundFXManager.instance.PlaySoundFXClip(throwSounds[randomIndex], transform, volume);
+        }
         if (isRotatingObject)
         {
             isRotatingObject = false;

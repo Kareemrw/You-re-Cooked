@@ -26,14 +26,16 @@ public class SushiRoller : MonoBehaviour
         ObjectGrabbable foodItem = other.GetComponent<ObjectGrabbable>();
         if (foodItem != null)
         {
-            if (foodItem.isHeld)
+            if (other.CompareTag("Seaweed") || other.CompareTag("Rice") || other.CompareTag("Salmon") || other.CompareTag("CreamCheese") || other.CompareTag("Avocado"))
             {
-                if (playerPickupDrop != null)
+                if (foodItem.isHeld)
                 {
-                    playerPickupDrop.DropObject();
+                    if (playerPickupDrop != null)
+                    {
+                        playerPickupDrop.DropObject();
+                    }
                 }
             }
-
             if (other.CompareTag("Seaweed") && !slotFilled[0])
             {
                 PlaceIngredient(other.transform, 0);
