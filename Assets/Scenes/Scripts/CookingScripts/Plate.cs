@@ -9,7 +9,8 @@ public class Plate : MonoBehaviour
     [SerializeField] private Transform balutSlot;    
     [SerializeField] private Transform soySauceSlot;       
     [SerializeField] private Transform vinegarSlot;                 // 1 balut slot
-    [SerializeField] private Transform[] headSlots = new Transform[2];    // 2 head slice slots
+    [SerializeField] private Transform headSlot1;                   // First head slot
+    [SerializeField] private Transform headSlot2;                   // Second head slot
 
     [Header("Placement Settings")]
     [SerializeField] private float verticalOffset = 0.1f;  // Vertical spacing between items
@@ -19,12 +20,18 @@ public class Plate : MonoBehaviour
     private bool balutSlotFilled = false;
     private bool soySauceSlotFilled = false;
     private bool vinegarSlotFilled = false;
-    private bool[] headSlotFilled = new bool[2];
+    private bool headSlot1Filled = false;
+    private bool headSlot2Filled = false;
 
     // Completion flags
     public bool SushiComplete = false;
     public bool BalutComplete = false;
     public bool GoatComplete = false;
+
+    // Group management
+    private enum IngredientGroup { None, Sushi, Balut, Goat }
+    private IngredientGroup activeGroup = IngredientGroup.None;
+
     [SerializeField] private PlayerPickupDrop playerPickupDrop;
 
     private void OnTriggerEnter(Collider other)
@@ -33,13 +40,25 @@ public class Plate : MonoBehaviour
         if (foodItem != null)
         {
             // Handle dropping held ingredients
-            if (other.CompareTag("SushiRoll") || other.CompareTag("Balut") || other.CompareTag("HeadSlice") || other.CompareTag("SoySauceBowl") || other.CompareTag("VinegarBowl"))
+            if (other.CompareTag("SushiRoll") || other.CompareTag("Balut") || 
+                other.CompareTag("HeadSlice1") || other.CompareTag("HeadSlice2") || 
+                other.CompareTag("SoySauceBowl") || other.CompareTag("VinegarBowl"))
             {
                 if (foodItem.isHeld && playerPickupDrop != null)
                 {
                     playerPickupDrop.DropObject();
                 }
             }
+        }
+
+        // Determine ingredient group and validate placement
+        IngredientGroup ingredientGroup = GetIngredientGroup(other.tag);
+        if (ingredientGroup == IngredientGroup.None) return;
+
+        if (!ValidateIngredientGroup(ingredientGroup))
+        {
+            Debug.Log("Cannot mix ingredient groups!");
+            return;
         }
 
         // Handle different ingredient types
@@ -51,7 +70,7 @@ public class Plate : MonoBehaviour
         {
             TryPlaceInBalutSlot(other.gameObject);
         }
-        else if (other.CompareTag("HeadSlice"))
+        else if (other.CompareTag("HeadSlice1") || other.CompareTag("HeadSlice2"))
         {
             TryPlaceInHeadSlot(other.gameObject);
         }
@@ -66,6 +85,40 @@ public class Plate : MonoBehaviour
 
         // Check for completion after placing the ingredient
         CheckForCompletion();
+    }
+
+    private IngredientGroup GetIngredientGroup(string tag)
+    {
+        switch (tag)
+        {
+            case "SushiRoll":
+            case "SoySauceBowl":
+                return IngredientGroup.Sushi;
+            
+            case "Balut":
+            case "VinegarBowl":
+                return IngredientGroup.Balut;
+            
+            case "HeadSlice1":
+            case "HeadSlice2":
+                return IngredientGroup.Goat;
+            
+            default:
+                return IngredientGroup.None;
+        }
+    }
+
+    private bool ValidateIngredientGroup(IngredientGroup newGroup)
+    {
+        // If no group is active yet, set the active group
+        if (activeGroup == IngredientGroup.None)
+        {
+            activeGroup = newGroup;
+            return true;
+        }
+
+        // Reject if trying to add to a different group
+        return activeGroup == newGroup;
     }
 
     private void TryPlaceInRollSlot(GameObject roll)
@@ -111,14 +164,15 @@ public class Plate : MonoBehaviour
 
     private void TryPlaceInHeadSlot(GameObject head)
     {
-        for (int i = 0; i < headSlots.Length; i++)
+        if (!headSlot1Filled && head.CompareTag("HeadSlice1"))
         {
-            if (!headSlotFilled[i])
-            {
-                PlaceIngredient(head, headSlots[i], Quaternion.identity);
-                headSlotFilled[i] = true;
-                break;
-            }
+            PlaceIngredient(head, headSlot1, Quaternion.identity);
+            headSlot1Filled = true;
+        }
+        else if (!headSlot2Filled && head.CompareTag("HeadSlice2"))
+        {
+            PlaceIngredient(head, headSlot2, Quaternion.identity);
+            headSlot2Filled = true;
         }
     }
 
@@ -175,15 +229,16 @@ public class Plate : MonoBehaviour
         balutSlotFilled = false;
 
         // Clear head slots
-        foreach (var slot in headSlots)
-        {
-            ClearSlot(slot);
-        }
-        headSlotFilled = new bool[2];
+        ClearSlot(headSlot1);
+        ClearSlot(headSlot2);
+        headSlot1Filled = false;
+        headSlot2Filled = false;
 
-        // Reset completion flags
+        // Reset completion flags and active group
         SushiComplete = false;
         BalutComplete = false;
+        GoatComplete = false;
+        activeGroup = IngredientGroup.None;
     }
 
     private void CheckForCompletion()
@@ -211,6 +266,13 @@ public class Plate : MonoBehaviour
             BalutComplete = true;
             Debug.Log("Balut Complete!");
         }
+
+        // Check if both head slots are filled
+        if (headSlot1Filled && headSlot2Filled)
+        {
+            GoatComplete = true;
+            Debug.Log("Goat Complete!");
+        }
     }
 
     // Public getters for completion flags
@@ -222,5 +284,10 @@ public class Plate : MonoBehaviour
     public bool IsBalutComplete()
     {
         return BalutComplete;
+    }
+
+    public bool IsGoatComplete()
+    {
+        return GoatComplete;
     }
 }
