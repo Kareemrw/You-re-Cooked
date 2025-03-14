@@ -37,5 +37,6 @@ public class SoySauceBowl : MonoBehaviour
         {
             soySauceObject.SetActive(true);
         }
+        gameObject.tag = "SoySauceBowl";
     }
 }

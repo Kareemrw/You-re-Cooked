@@ -13,7 +13,7 @@ public class SushiRoller : MonoBehaviour
 
     private Rigidbody rollerRigidbody;
     private bool isRolling = false;
-    private int currentStep = 0; 
+ 
     private int salmonCounter = 0;
     private void Start()
     {
@@ -143,9 +143,6 @@ public class SushiRoller : MonoBehaviour
         {
             slotFilled[i] = false;
         }
-
-        currentStep = 0;
-
         isRolling = false;
     }
 }
