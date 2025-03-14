@@ -101,7 +101,7 @@ public class PlayerPickupDrop : MonoBehaviour
             isRotatingObject = false;
         }
     }
-    private void DropObject()
+    public void DropObject()
     {
         if (isRotatingObject)
         {

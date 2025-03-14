@@ -17,6 +17,7 @@ TagManager:
   - WholeIngredient
   - SushiRoll
   - AlfinHead
+  - SoySauce
   layers:
   - Default
   - TransparentFX

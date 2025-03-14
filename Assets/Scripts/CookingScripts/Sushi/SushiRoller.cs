@@ -8,6 +8,8 @@ public class SushiRoller : MonoBehaviour
     private bool[] slotFilled;
     [SerializeField] private float rollingVelocityThreshold = 2f;
     [SerializeField] private GameObject sushiPrefab;
+    [SerializeField] private PlayerPickupDrop playerPickupDrop;
+
 
     private Rigidbody rollerRigidbody;
     private bool isRolling = false;
@@ -22,19 +24,27 @@ public class SushiRoller : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ObjectGrabbable foodItem = other.GetComponent<ObjectGrabbable>();
-        if (foodItem != null && !foodItem.isHeld)
+        if (foodItem != null)
         {
-            if (currentStep == 0 && other.CompareTag("Seaweed") && !slotFilled[0])
+            if (foodItem.isHeld)
+            {
+                if (playerPickupDrop != null)
+                {
+                    playerPickupDrop.DropObject();
+                }
+            }
+
+            if (other.CompareTag("Seaweed") && !slotFilled[0])
             {
                 PlaceIngredient(other.transform, 0);
-                currentStep++;
+                
             }
-            else if (currentStep == 1 && other.CompareTag("Rice") && !slotFilled[1])
+            else if (other.CompareTag("Rice") && !slotFilled[1])
             {
                 PlaceIngredient(other.transform, 1);
-                currentStep++;
+                
             }
-            else if (currentStep == 2 && other.CompareTag("Salmon"))
+            else if (other.CompareTag("Salmon"))
             {
                 if (other.GetComponent<ObjectGrabbable>().isHeld) return;
                 for (int slotIndex = 2; slotIndex <= 5; slotIndex++)
@@ -51,22 +61,19 @@ public class SushiRoller : MonoBehaviour
 
                         if (salmonCounter >= 4)
                         {
-                            currentStep++;
                             Debug.Log("all salmon placed.");
                         }
                         break;
                     }
                 }
             }
-            else if (currentStep == 3 && other.CompareTag("CreamCheese") && !slotFilled[6])
+            else if (other.CompareTag("CreamCheese") && !slotFilled[6])
             {
                 PlaceIngredient(other.transform, 6);
-                currentStep++;
             }
-            else if (currentStep == 4 && other.CompareTag("Avocado") && !slotFilled[7])
+            else if ( other.CompareTag("Avocado") && !slotFilled[7])
             {
                 PlaceIngredient(other.transform, 7);
-                currentStep++;
             }
         }
     }
