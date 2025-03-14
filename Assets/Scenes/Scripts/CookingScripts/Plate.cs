@@ -22,9 +22,9 @@ public class Plate : MonoBehaviour
     private bool[] headSlotFilled = new bool[2];
 
     // Completion flags
-    private bool SushiComplete = false;
-    private bool BalutComplete = false;
-
+    public bool SushiComplete = false;
+    public bool BalutComplete = false;
+    public bool GoatComplete = false;
     [SerializeField] private PlayerPickupDrop playerPickupDrop;
 
     private void OnTriggerEnter(Collider other)

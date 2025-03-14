@@ -1,28 +1,50 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
     public AudioSource aS1, aS2;
-    float defaultVolume = 1;
-    float transitionTime = 1.25f;
+    private static TEST instance; // Ensure only one instance persists
+    private float defaultVolume = 1f;
+    private float transitionTime = 1.25f;
+
+    private void Awake()
+    {
+        // Ensure this object persists across scenes
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicates when reloading scenes
+            return;
+        }
+
+        // Also prevent AudioSources from being destroyed
+        if (aS1 != null)
+            DontDestroyOnLoad(aS1.gameObject);
+        if (aS2 != null)
+            DontDestroyOnLoad(aS2.gameObject);
+    }
 
     public void ChangeClip()
     {
         AudioSource nowPlaying = aS1;
         AudioSource target = aS2;
-        if(nowPlaying.isPlaying == false)
+
+        if (!nowPlaying.isPlaying)
         {
             nowPlaying = aS2;
             target = aS1;
         }
 
-        //StopAllCoroutines();
         StartCoroutine(MixSources(nowPlaying, target));
     }
-    IEnumerator MixSources(AudioSource nowPlaying, AudioSource target)
+
+    private IEnumerator MixSources(AudioSource nowPlaying, AudioSource target)
     {
         float percentage = 0;
         while (nowPlaying.volume > 0)
@@ -33,7 +55,7 @@ public class TEST : MonoBehaviour
         }
 
         nowPlaying.Pause();
-        if (target.isPlaying == false)
+        if (!target.isPlaying)
             target.Play();
         target.UnPause();
         percentage = 0;
@@ -45,5 +67,4 @@ public class TEST : MonoBehaviour
             yield return null;
         }
     }
-
 }

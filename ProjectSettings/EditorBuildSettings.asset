@@ -12,14 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/InteractionTesting.unity
     guid: faf6cbf1e4e3d4548a2cd542959a1772
   - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/SushiDialogue.unity
+    guid: ff38392ec229d8e47a0599d253f6041e
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: a29f7a06b920be04dbb27741b5f3f32b
+  - enabled: 1
     path: Assets/Scenes/Interaction.unity
     guid: a94eb8cad0a7c9742a57a227ab7528f8
   - enabled: 1
     path: Assets/Scenes/Dialogue Scenes/IntroductionDialogue.unity
     guid: f71489d6311dd5c4eae4a3514b228345
-  - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: a29f7a06b920be04dbb27741b5f3f32b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ddc92190b3bffcc47976fcebe33dfb4d, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: bd83c7b4711b8e14896530ddb137104f, type: 3}
