@@ -28,10 +28,11 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
-   // public GameObject instructionsPanel;
+    // public GameObject instructionsPanel;
 
-   // public GameObject backgroundArt;
+    // public GameObject backgroundArt;
 
+    //public GameObject frames;
 
 
     private void Awake()
@@ -44,7 +45,9 @@ public class DialogueManager : MonoBehaviour
 
 
 
-        if(SceneManager.GetActiveScene().name == "IntroductionDialogue")
+        if(SceneManager.GetActiveScene().name == "IntroductionDialogue" || SceneManager.GetActiveScene().name == "BalutIntro" || SceneManager.GetActiveScene().name == "BalutWin" ||
+                SceneManager.GetActiveScene().name == "GHIntro" || SceneManager.GetActiveScene().name == "GHWin" ||
+                    SceneManager.GetActiveScene().name == "SushiIntro" || SceneManager.GetActiveScene().name == "SushiWin" || SceneManager.GetActiveScene().name == "QueenEnding")
         {
             //get all of the choices text
             choicesText = new TextMeshProUGUI[choices.Length];
@@ -55,6 +58,11 @@ public class DialogueManager : MonoBehaviour
                 index++;
             }
 
+            EnterDialogueMode(inkJSON);
+        }
+
+        if(SceneManager.GetActiveScene().name == "BalutLoss" || SceneManager.GetActiveScene().name == "GHLoss" || SceneManager.GetActiveScene().name == "SushiLoss")
+        {
             EnterDialogueMode(inkJSON);
         }
     }
@@ -97,6 +105,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
+
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
@@ -126,6 +136,8 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
+        
+
         Load3DScene();
     }
 
@@ -142,6 +154,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            //frames.SetActive(false);
             StartCoroutine(ExitDialogueMode());
         }
     }
@@ -174,6 +187,7 @@ public class DialogueManager : MonoBehaviour
         }
 
        SelectFirstChoice();
+        //frames.SetActive(true);
     }
 
     private void SelectFirstChoice()
@@ -187,11 +201,21 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
 
+        //frames.SetActive(false);
         Debug.Log("enters makeChoice block");
     }
 
     public void Load3DScene()
     {
-        SceneManager.LoadScene("InteractionTesting");
+        if(SceneManager.GetActiveScene().name == "BalutLoss" || SceneManager.GetActiveScene().name == "GHLoss" || SceneManager.GetActiveScene().name == "SushiLoss"  || SceneManager.GetActiveScene().name == "QueenEnding")
+        {
+            SceneManager.LoadScene("TitleScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("TestScene");
+        }
+        
+
     }
 }

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InteractionTesting.unity
     guid: faf6cbf1e4e3d4548a2cd542959a1772
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dialogue Scenes/SushiDialogue.unity
     guid: ff38392ec229d8e47a0599d253f6041e
   - enabled: 1
@@ -23,6 +23,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialogue Scenes/IntroductionDialogue.unity
     guid: f71489d6311dd5c4eae4a3514b228345
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Balut/BalutIntro.unity
+    guid: 97dd72e3034cf2b4cbe663803e962bf0
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Balut/BalutWin.unity
+    guid: 008fe713a6d1d3b4a84b3c8d753fe397
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Balut/BalutLoss.unity
+    guid: 1b8815e3ae849184fb26d3636866858f
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/GoatHead/GHIntro.unity
+    guid: 9a7859f1ca0fd3947be2750fdf43827a
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/GoatHead/GHWin.unity
+    guid: e2bb0be1421aa634fa2471a531073abb
+  - enabled: 0
+    path: Assets/Scenes/Dialogue Scenes/GoatHead/GHLoss2.unity
+    guid: 96936a03e19a47f4aa2c370db5b3b0b4
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Sushi/SushiIntro.unity
+    guid: 1f50a42d33dbee34caf414450ffae576
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Sushi/SushiWin.unity
+    guid: 3a1eb911b59d0dc4598d344c6c587c86
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/Sushi/SushiLoss.unity
+    guid: 88f374af4f287fc4380801578825cc79
+  - enabled: 1
+    path: Assets/Scenes/Dialogue Scenes/QueenEnding.unity
+    guid: 4a3db149776500149aee398d6fd599e8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ddc92190b3bffcc47976fcebe33dfb4d, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: bd83c7b4711b8e14896530ddb137104f, type: 3}

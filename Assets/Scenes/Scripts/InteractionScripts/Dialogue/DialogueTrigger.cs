@@ -13,6 +13,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
 
+    public GameObject plate;
     private void Awake()
     {
         playerInRange = false;
@@ -37,11 +38,16 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if(collider.gameObject.tag == "Plate")
         {
             playerInRange = true;
 
-            Load2DScene();
+            if(plate.GetComponent<Plate>().BalutComplete == true || plate.GetComponent<Plate>().GoatComplete == true || plate.GetComponent<Plate>().SushiComplete == true)
+            {
+                Load2DScene();
+            }
+
+            
         }
     }
 
@@ -55,6 +61,18 @@ public class DialogueTrigger : MonoBehaviour
 
     public void Load2DScene()
     {
-        SceneManager.LoadScene("IntroductionDialogue");
+        if (plate.GetComponent<Plate>().BalutComplete == true)
+        {
+            SceneManager.LoadScene("BalutWin");
+        }
+        if (plate.GetComponent<Plate>().GoatComplete == true)
+        {
+            SceneManager.LoadScene("GHWin");
+        }
+        if (plate.GetComponent<Plate>().SushiComplete == true)
+        {
+            SceneManager.LoadScene("SushiWin");
+        }
+
     }
 }

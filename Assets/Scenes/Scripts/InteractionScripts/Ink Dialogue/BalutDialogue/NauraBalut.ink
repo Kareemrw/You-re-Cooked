@@ -7,7 +7,7 @@ Pet Translator: “ So you are the cook for the day? I wonder if I will get to e
     +[Explain your dish to me]
         ->EYDTM
     +[It is an honor to cook for you]
-        -> END
+        -> IIAHTCFY
 
 === EYDTM ===
 // Explain your dish to me Option
