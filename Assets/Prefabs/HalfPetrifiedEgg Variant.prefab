@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4243169062556133913}
   m_Layer: 0
   m_Name: HalfPetrifiedEgg Variant
-  m_TagString: Untagged
+  m_TagString: Balut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

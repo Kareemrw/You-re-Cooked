@@ -20,6 +20,16 @@ TagManager:
   - SoySauce
   - SoySauceBowl
   - Vinegar
+  - HeadSlice
+  - Balut
+  - Spread
+  - CreamCheeseContainer
+  - AvocadoContainer
+  - SlicedOnion
+  - VinegarBowl
+  - Water
+  - CookedRice
+  - Paddle
   layers:
   - Default
   - TransparentFX
