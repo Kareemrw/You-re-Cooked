@@ -27,6 +27,25 @@ Pet Translator: “Pathetic apology. Just remember, it should be soft and chewy.
 -> END
 
 === IIAHTCFY ===
+// It is an honor to cook for you Option
+Protagonist: “Yes, I am the cook for the day. It is an honor to cook you my first meal on this ship. I am unsure if I would taste as good, but let’s hope we don’t find out. Hehe. I would appreciate any tips or advice if you would be kind.”
 
+Pet Translator: “You know what? Why the flip not? You have been rather pleasant. You must know how to boil small protein-packed ingredients.”
+    +[I am grateful for the help]
+        -> IAGFTH
+    +[Thanks, I guess...]
+        -> TIG
+
+=== IAGFTH ===
+//I am grateful for the help Option
+Protagonist: “Well, um, thank you. I am nothing but grateful for the help you have given me.”
+
+Pet Translator: “I guess I have time to spare, so listen up. The texture should be soft and chewy. Also, the addition of a traditional spicy condiment should give it the kick I like. Get cooking.”
 -> END
+
+=== TIG ===
+//Thank, I guess.. Option
+Protagonist: “Uh- you could have specified a bit more. But, thanks, I guess...”
+
+Pet Translator: “Just start cooking. I can not hold your hand if I want to taste something out of this world… ship. Either you make my meal, or you will become my meal. I have no preference. ”
 -> END
